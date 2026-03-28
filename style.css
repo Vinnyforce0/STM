@@ -1,0 +1,159 @@
+/* RESET + BASE MOBILE */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0f0f0f;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: #0f0f0f;
+}
+
+/* movimento suave */
+@keyframes moveBg {
+  0% {
+    background-position: 30% 40%, 70% 70%, 50% 20%;
+  }
+  50% {
+    background-position: 35% 45%, 65% 75%, 55% 25%;
+  }
+  100% {
+    background-position: 30% 40%, 70% 70%, 50% 20%;
+  }
+}
+
+/* 🟧 HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ff7a00;
+  color: white;
+
+  padding: 12px 2px;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* conteúdo acima das bolhas */
+header, main {
+  position: relative;
+  z-index: 2;
+  padding: 16px;
+}
+
+main {
+  padding: 80px 16px 16px;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: white;
+
+  font-size: 22px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+}
+
+/* container */
+#pages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* card */
+.page-card {
+  background: linear-gradient(135deg, #ff7a00, #ff9a2f);
+  border-radius: 16px;
+  padding: 16px;
+
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+
+  min-height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.page-card:active {
+  transform: scale(0.95);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(15,15,15,0.95);
+  backdrop-filter: blur(10px);
+
+  z-index: 2000;
+
+  display: flex;
+  flex-direction: column;
+
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.page-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* botão X */
+.close-btn {
+  align-self: flex-end;
+  margin: 10px;
+
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: white;
+}

@@ -1,7 +1,7 @@
 // service-worker.js
 
 // Importa a versão do config.js
-const APP_VERSION = "1.0.0";
+const APP_VERSION = "1.0.6";
 
 // Detecta localhost/Live Server (/) ou GitHub Pages (/Raycasting/)
 const isDev = self.location.hostname === 'localhost' || self.location.hostname === '127.0.0.1';
@@ -15,6 +15,9 @@ const ASSETS_TO_CACHE = [
   BASE_PATH + 'style.css',
   BASE_PATH + 'app.js',
   BASE_PATH + 'storage.js',
+  BASE_PATH + 'images/floor.jpg',
+  BASE_PATH + 'images/sky.jpg',
+  BASE_PATH + 'images/laser.png'
 ];
 
 // Evento de instalação - faz cache de todos os arquivos

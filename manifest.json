@@ -1,0 +1,26 @@
+{
+  "name": "Math Mania",
+  "short_name": "MathMania",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "nenhuma descrição",
+  "icons": [
+    {
+      "src": "images/floor.jpg",
+      "sizes": "128x128",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "images/laser.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/sky.jpg",
+      "sizes": "1123x794",
+      "type": "image/jpeg"
+    }
+  ]
+}
