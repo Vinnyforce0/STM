@@ -1,4 +1,4 @@
-import { getPages, addPage, updatePage } from "/storage.js";
+import { getPages, addPage, updatePage } from "./storage.js";
 
 const app = document.querySelector("main");
 
@@ -61,12 +61,15 @@ window.openPage = function (id) {
     overlay.className = "page-overlay";
 
     overlay.innerHTML = `
+  <div class="page-header">
+    <span class="page-title">${page.title}</span>
     <button class="close-btn">✕</button>
-    <div class="page-content">
-      <h2>${page.title}</h2>
-      <textarea id="noteArea">${page.content}</textarea>
-    </div>
-  `;
+  </div>
+
+  <div class="page-content">
+    <textarea id="noteArea">${page.content}</textarea>
+  </div>
+`;
 
     document.body.appendChild(overlay);
 
