@@ -1,6 +1,6 @@
 {
-  "name": "Math Mania",
-  "short_name": "MathMania",
+  "name": "Super Time Manager",
+  "short_name": "STM",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#000000",

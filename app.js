@@ -1,4 +1,5 @@
 import { getPages, addPage, updatePage } from "./storage.js";
+import { createNotePage, openNotePage } from "./pages/note.js";
 
 const app = document.querySelector("main");
 
@@ -37,19 +38,7 @@ function renderHome() {
 
 /* ➕ CRIAR PÁGINA */
 window.createNotePage = function () {
-    const title = prompt("Nome da página:");
-
-    if (!title) return;
-
-    const newPage = {
-        id: Date.now().toString(),
-        title,
-        type: "note",
-        content: ""
-    };
-
-    addPage(newPage);
-    renderHome();
+    createNotePage(addPage, renderHome);
 };
 
 /* 📱 ABRIR PÁGINA (OVERLAY) */
@@ -57,34 +46,10 @@ window.openPage = function (id) {
     const pages = getPages();
     const page = pages.find(p => p.id === id);
 
-    const overlay = document.createElement("div");
-    overlay.className = "page-overlay";
-
-    overlay.innerHTML = `
-  <div class="page-header">
-    <span class="page-title">${page.title}</span>
-    <button class="close-btn">✕</button>
-  </div>
-
-  <div class="page-content">
-    <textarea id="noteArea">${page.content}</textarea>
-  </div>
-`;
-
-    document.body.appendChild(overlay);
-
-    /* ❌ fechar */
-    overlay.querySelector(".close-btn").onclick = () => {
-        overlay.remove();
-    };
-
-    /* 💾 auto-save */
-    const textarea = overlay.querySelector("#noteArea");
-
-    textarea.addEventListener("input", (e) => {
-        page.content = e.target.value;
-        updatePage(page);
-    });
+    if (page.type === "note") {
+        openNotePage(page, updatePage);
+    }
+    // Adicionar outros tipos aqui posteriormente
 };
 
 /* 🎨 BACKGROUND */
