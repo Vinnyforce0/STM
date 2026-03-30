@@ -15,6 +15,8 @@ const ASSETS_TO_CACHE = [
   BASE_PATH + 'style.css',
   BASE_PATH + 'app.js',
   BASE_PATH + 'storage.js',
+  BASE_PATH + 'pages/note.js',
+  BASE_PATH + 'pages/chart.js',
   BASE_PATH + 'images/floor.jpg',
   BASE_PATH + 'images/sky.jpg',
   BASE_PATH + 'images/laser.png'

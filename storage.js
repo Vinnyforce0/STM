@@ -32,3 +32,10 @@ export function updatePage(updatedPage) {
 
   saveData(data);
 }
+
+/* 🗑️ deletar página */
+export function deletePage(pageId) {
+  const data = getData();
+  data.pages = data.pages.filter(p => p.id !== pageId);
+  saveData(data);
+}
